@@ -1,0 +1,35 @@
+[
+  {
+    "name":"Univeristy of North Carolina at Chapel Hill",
+    "code": "uncch",
+    "acceptRate": 0.27,
+    "gpa": {
+      "average": 4.66,
+      "breakdown": {
+        "min375": 0.97,
+        "min35": 0.02,
+        "min325": 0.0,
+        "min3": 0.0,
+        "min2.5": 0.0
+      }
+    },
+    "sat": {
+      "reading": {
+        "min": 590,
+        "max": 700
+      },
+      "math": {
+        "min": 600,
+        "max": 710
+      },
+      "writing": {
+        "min": 580,
+        "max": 690
+      }
+    },
+    "act": {
+      "min": 27,
+      "max": 32
+    }
+  }
+]
