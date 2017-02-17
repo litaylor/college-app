@@ -16,6 +16,12 @@
     <input size="3" type="number" step="10" min="200" max="800" v-model.number="satw" v-show="activeField==='satw'" />
     <input size="3" type="number" step="1" min="1" max="36" v-model.number="act" v-show="activeField==='act'" />
 
+    <br />
+
+    <input type="range" step="10" min="200" max="800" v-model.number="satr" v-show="activeField==='satr'" style="width:50%;" />
+    <input type="range" step="10" min="200" max="800" v-model.number="satm" v-show="activeField==='satm'" style="width:50%;" />
+    <input type="range" step="10" min="200" max="800" v-model.number="satw" v-show="activeField==='satw'" style="width:50%;" />
+    <input type="range" step="1" min="1" max="36" v-model.number="act" v-show="activeField==='act'" class="slider" />
 
     <schoolInfo
     :schools="schools"
@@ -33,6 +39,9 @@
 <script>
 import axios from 'axios'
 import schoolInfo from './components/schoolInfo'
+// import Vue from 'vue'
+//
+// var eventHub = new Vue()
 
 export default {
   name: 'app',
@@ -53,7 +62,8 @@ export default {
       fields: 'single'
     }
   },
-
+  methods: {
+  },
   mounted () {
     this.message = 'the new message'
 
@@ -73,5 +83,15 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+}
+@media (max-width: 768px) {
+  .slider {
+    width: 50%;
+  }
+}
+@media (min-width: 768px) {
+  .slider {
+    width: 240px;
+  }
 }
 </style>

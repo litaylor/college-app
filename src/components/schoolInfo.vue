@@ -3,14 +3,15 @@
     <div style="margin-top: 40px" v-if="schoolList">
 
       <graph
-      :schools="schools"
-      :activeField="activeField"
-      :satr="satr"
-      :satm="satm"
-      :satw="satw"
-      :act="act"
-      :fields="fields"
-      :testCode="testCode">
+        ref="graphRef"
+        :schools="schools"
+        :activeField="activeField"
+        :satr="satr"
+        :satm="satm"
+        :satw="satw"
+        :act="act"
+        :fields="fields"
+        :testCode="testCode">
         it's the graph
       </graph>
 
@@ -142,7 +143,7 @@
               Target schools: <br />
             </p>
             <div
-              v-for="school in schoolList" v-if="(school.act.min <= satw) && (school.act.max >= act)">
+              v-for="school in schoolList" v-if="(school.act.min <= act) && (school.act.max >= act)">
               <p>
                 {{ school.name }} <br /> ACT: {{ school.act.min }} - {{ school.act.max }}
               </p>
@@ -188,6 +189,8 @@ export default {
     }
   },
   mounted () {
+  },
+  methods: {
   },
   computed: {
     schoolList () {
