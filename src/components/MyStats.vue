@@ -1,12 +1,15 @@
 <template lang="html">
   <div id="myStats" class="scorePanel myScores">
-    <h3> My scores </h3>
+    <h3> My SAT </h3>
     <ul>
       <li> {{ satr }} </li>
       <li> {{ satm }} </li>
       <li> {{ satw }} </li>
     </ul>
-    <h3> &nbsp; </h3>
+    <h3> My ACT </h3>
+    <ul>
+      <li> {{ act }} </li>
+    </ul>
   </div>
 </template>
 
@@ -20,7 +23,8 @@ export default {
     'act'
   ],
   data () {
-
+    return {
+    }
   }
 }
 </script>

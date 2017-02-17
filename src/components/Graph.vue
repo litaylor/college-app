@@ -31,7 +31,8 @@
       'satw',
       'act',
       'fields',
-      'testCode'
+      'testCode',
+      'outsideHighlightSchool'
     ],
     data () {
       return {
@@ -275,6 +276,9 @@
       }
     },
     watch: {
+      outsideHighlightSchool: function () {
+        this.highlightSchool = this.outsideHighlightSchool
+      },
       tempArray: function () {
         this.drawGraph(this.svg, this.activeField, this.alertFunction)
       },
