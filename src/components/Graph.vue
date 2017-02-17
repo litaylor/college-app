@@ -314,7 +314,7 @@
   }
   .label {
     font-size: 4px;
-    font-family: sans-serif;
+    font-family: 'Lato';
   }
   @media (max-width: 660px) {
     .label:not(.scoreLabel) {

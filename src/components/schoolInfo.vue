@@ -15,6 +15,10 @@
         :outsideHighlightSchool="outsideHighlightSchool">
       </graph>
 
+      <p class="description midDescription">
+        Click any school for information on its admitted students&rsquo; test scores and average grades.
+      </p>
+
       <!-- School Lists -->
       <div v-if="fields==='single'">
         <div v-if="activeField==='satr'" class="categoryWrap">
@@ -217,10 +221,18 @@ export default {
 .schoolCategory {
   display: inline-block;
 }
+.schoolCategory div {
+  cursor: pointer;
+}
+.schoolCategory div:hover p {
+  background-color: #F77A52;
+  color: white;
+}
 @media(min-width:992px) {
   .categoryWrap {
     overflow: hidden;
-    width: 100%;
+    width: 720px;
+    margin: 0 auto;
   }
   .schoolCategory {
     box-sizing: border-box;
@@ -252,6 +264,13 @@ export default {
 .schoolCategory p{
   -webkit-margin-before: 0;
   -webkit-margin-after: 0;
-  line-height: 1.6
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+.description a:link, .description a:visited {
+  color: inherit;
+}
+.description a:hover, .description a:active {
+  color: #F77A52;
 }
 </style>
