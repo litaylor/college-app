@@ -18,9 +18,9 @@
 
     <br />
 
-    <input type="range" step="10" min="200" max="800" v-model.number="satr" v-show="activeField==='satr'" style="width:50%;" />
-    <input type="range" step="10" min="200" max="800" v-model.number="satm" v-show="activeField==='satm'" style="width:50%;" />
-    <input type="range" step="10" min="200" max="800" v-model.number="satw" v-show="activeField==='satw'" style="width:50%;" />
+    <input type="range" step="10" min="200" max="800" v-model.number="satr" v-show="activeField==='satr'" style="width:50%;" class="slider" />
+    <input type="range" step="10" min="200" max="800" v-model.number="satm" v-show="activeField==='satm'" style="width:50%;" class="slider" />
+    <input type="range" step="10" min="200" max="800" v-model.number="satw" v-show="activeField==='satw'" style="width:50%;" class="slider" />
     <input type="range" step="1" min="1" max="36" v-model.number="act" v-show="activeField==='act'" class="slider" />
 
     <schoolInfo
@@ -39,6 +39,7 @@
 <script>
 import axios from 'axios'
 import schoolInfo from './components/schoolInfo'
+
 // import Vue from 'vue'
 //
 // var eventHub = new Vue()
@@ -66,7 +67,6 @@ export default {
   },
   mounted () {
     this.message = 'the new message'
-
     axios.get('/static/college-data.json')
     .then((response) => {
       this.schools = response.data
@@ -79,9 +79,9 @@ export default {
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  /*font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale;*/
   text-align: center;
 }
 @media (max-width: 768px) {

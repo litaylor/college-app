@@ -6,17 +6,26 @@
         <h3> Acceptance rate: {{ acceptPct }} </h3>
         <h2> Middle 50% test scores: </h2>
 
-        <h3> SAT </h3>
-        <ul>
-          <li> Reading: {{ displaySchool.sat.reading.min }} - {{ displaySchool.sat.reading.min }} </li>
-          <li> Math: {{ displaySchool.sat.math.min }} - {{ displaySchool.sat.math.min }} </li>
-          <li> Writing: {{ displaySchool.sat.writing.min }} - {{ displaySchool.sat.writing.min }} </li>
-        </ul>
+        <div class = "scorePanel schoolScores">
+          <h3> SAT </h3>
+          <ul>
+            <li> Reading: {{ displaySchool.sat.reading.min }} - {{ displaySchool.sat.reading.min }} </li>
+            <li> Math: {{ displaySchool.sat.math.min }} - {{ displaySchool.sat.math.min }} </li>
+            <li> Writing: {{ displaySchool.sat.writing.min }} - {{ displaySchool.sat.writing.min }} </li>
+          </ul>
 
-        <h3> ACT </h3>
-        <ul>
-          <li> Reading: {{ displaySchool.act.min }} - {{ displaySchool.act.min }} </li>
-        </ul>
+          <h3> ACT </h3>
+          <ul>
+            <li> Reading: {{ displaySchool.act.min }} - {{ displaySchool.act.min }} </li>
+          </ul>
+        </div>
+        <myStats
+          :satr="satr"
+          :satm="satm"
+          :satw="satw"
+          :act="act">
+
+        </myStats>
 
         <h3> GPA breakdown </h3>
         <h4> Average: {{ displaySchool.gpa.average }} </h4>
@@ -37,11 +46,17 @@
 
 <script>
   import * as d3 from 'd3'
+  import myStats from '../components/MyStats'
+
   export default {
     name: 'highlight',
     props: [
       'school',
-      'schoolList'
+      'schoolList',
+      'satr',
+      'satm',
+      'satw',
+      'act'
     ],
     data () {
       return {
@@ -95,6 +110,9 @@
           this.openSwitch = 'open'
         }
       }
+    },
+    components: {
+      myStats
     }
   }
 </script>

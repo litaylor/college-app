@@ -1,6 +1,12 @@
 <template>
   <div id="graph">
-    <highlight :school="highlightSchool" :schoolList="schools">
+    <highlight
+      :school="highlightSchool"
+      :schoolList="schools"
+      :satr="satr"
+      :satm="satm"
+      :satw="satw"
+      :act="act">
     </highlight>
     <div style="display: none" v-on:cleared="this.drawGraph(this.svg, this.activeField, this.alertFunction)">
     </div>
