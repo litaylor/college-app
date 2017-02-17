@@ -169,7 +169,7 @@
 import graph from '../components/Graph'
 
 export default {
-  name: 'app',
+  name: 'schoolInfo',
   components: {
     graph
   },
