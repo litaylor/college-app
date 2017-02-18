@@ -2,6 +2,8 @@
   <div id="schoolInfo">
     <div style="margin-top: 40px" v-if="schoolList">
 
+      <!-- Load graph -->
+
       <graph
         ref="graphRef"
         :schools="schools"
@@ -21,6 +23,8 @@
 
       <!-- School Lists -->
       <div v-if="fields==='single'">
+
+        <!-- List schools if SAT Reading selected -->
         <div v-if="activeField==='satr'" class="categoryWrap">
           <div class="schoolCategory">
             <p class="header">
@@ -56,6 +60,8 @@
             </div>
           </div>
         </div>
+
+        <!-- List schools if SAT Math selected -->
         <div v-if="activeField==='satm'" class="categoryWrap">
           <div class="schoolCategory">
             <p class="header">
@@ -91,6 +97,8 @@
             </div>
           </div>
         </div>
+
+        <!-- List schools if SAT Writing selected -->
         <div v-if="activeField==='satw'" class="categoryWrap">
           <div class="schoolCategory">
             <p class="header">
@@ -126,6 +134,8 @@
             </div>
           </div>
         </div>
+
+        <!-- List schools if ACT selected -->
         <div v-if="activeField==='act'" class="categoryWrap">
           <div class="schoolCategory">
             <p class="header">
@@ -167,6 +177,7 @@
 </template>
 
 <script>
+// load graph
 import graph from '../components/Graph'
 
 export default {
@@ -185,7 +196,7 @@ export default {
   ],
   data () {
     return {
-      message: 'this the inside message',
+      // Establish variable allowing clicking on school from this level, pass to Graph -> Highlight to show popup
       outsideHighlightSchool: []
     }
   },
@@ -194,6 +205,7 @@ export default {
   methods: {
     assignOutsideHighlightSchool: function (school) {
       this.outsideHighlightSchool = [school.name, 'x', 'x']
+      // requires 3-entry-length variable to match clicking from inside Graph
     }
   },
   computed: {
@@ -213,9 +225,6 @@ export default {
 
 <style>
 #app {
-  /*font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;*/
   text-align: center;
 }
 .schoolCategory {

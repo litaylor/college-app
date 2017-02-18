@@ -1,4 +1,5 @@
 <template lang="html">
+  <!-- Include users's own test scores in popup window -->
   <div id="myStats" class="scorePanel myScores">
     <h3> My SAT </h3>
     <ul>

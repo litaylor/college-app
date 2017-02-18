@@ -1,5 +1,6 @@
 <template>
   <div id="graph">
+    <!-- Highlight component shows popup when user clicks school -->
     <highlight
       :school="highlightSchool"
       :schoolList="schools"
@@ -8,13 +9,17 @@
       :satw="satw"
       :act="act">
     </highlight>
+    <!-- Event listener for when user closes popup from Highlight component -->
     <div style="display: none" v-on:cleared="this.drawGraph(this.svg, this.activeField, this.alertFunction)">
     </div>
   </div>
 </template>
 
 <script>
+  // load highlight
   import highlight from '../components/Highlight'
+
+  // load d3 to create graph
   import * as d3 from 'd3'
   // const data = [99, 71, 78, 25, 36, 92]
 
@@ -36,7 +41,6 @@
     ],
     data () {
       return {
-        graphtest: 'hey',
         highlightSchool: []
       }
     },
@@ -48,12 +52,14 @@
         this.highlightSchool = school
       },
       drawGraph: function (svg, activeField, alertFunction) {
+        // Clear current svg
         svg.selectAll('*').remove()
-        // var graphMargin = { top: 20, bottom: 20, left: 20, right: 20 }
 
+        // Start creating new drawing on svg
         var scoreData = []
         scoreData.push(this[activeField])
 
+        // Bars
         svg.selectAll('bar')
           .data(this.tempArray)
           .enter().append('rect')
@@ -107,7 +113,6 @@
           })
 
         // Add minimum score labels to left side of bars
-
         svg.selectAll('text.mins')
           .data(this.tempArray)
           .enter().append('text')
@@ -137,7 +142,6 @@
           })
 
         // Add maximum score labels to right side of bars
-
         svg.selectAll('text.maxs')
           .data(this.tempArray)
           .enter().append('text')
@@ -166,6 +170,7 @@
             return d[2]
           })
 
+        // Add vertical My Score line
         svg.selectAll('line')
           .data(scoreData)
           .enter().append('line')
@@ -199,6 +204,7 @@
           })
           .attr('y2', 100)
 
+        // Add label on top of My Score line
         svg.selectAll('text.scoreLabel')
           .data(scoreData)
           .enter().append('text')
@@ -222,6 +228,7 @@
           .attr('y', -3)
           .text('My score')
 
+        // Add school name labels on left side of graph
         svg.selectAll('text.schoolLabel')
           .data(this.tempArray)
           .enter().append('text')
@@ -252,6 +259,7 @@
       }
     },
     computed: {
+      // Create svg
       svg () {
         return d3.select(this.$el)
           .append('svg')
@@ -259,6 +267,7 @@
           .attr('viewBox', '-5 -5 110 110')
           .attr('preserveAspectRatio', 'none')
       },
+      // Create test scores array based on selected test
       tempArray () {
         var myData = this.schools.schools
         var i
@@ -279,6 +288,7 @@
       outsideHighlightSchool: function () {
         this.highlightSchool = this.outsideHighlightSchool
       },
+      // These all make sure to redraw the graph immediately if the user changes the test or any of their scores
       tempArray: function () {
         this.drawGraph(this.svg, this.activeField, this.alertFunction)
       },
@@ -300,7 +310,6 @@
 
 <style>
   #graph {
-    /*border: thin red solid;*/
   }
   .graphCanvas {
     width:720px;

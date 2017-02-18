@@ -1,6 +1,8 @@
 <template>
   <div id="app">
 
+    <!-- Header -->
+
     <myHeader></myHeader>
 
     <div class="body">
@@ -23,6 +25,8 @@
 
         <br />
 
+        <!-- SLIDER INPUT (again, only show one) -->
+
         <input type="range" step="10" min="200" max="800" v-model.number="satr" v-show="activeField==='satr'" class="slider" />
         <input type="range" step="10" min="200" max="800" v-model.number="satm" v-show="activeField==='satm'" class="slider" />
         <input type="range" step="10" min="200" max="800" v-model.number="satw" v-show="activeField==='satw'" class="slider" />
@@ -32,6 +36,8 @@
       <p class="description">
         The bars below represent the middle 50% range of scores of students admitted to each school. Choose your test and enter your score to see how you compare. Data are the most recent available from <a href="https://www.princetonreview.com">The Princeton Review</a>. Not all UNC system schools are listed.
       </p>
+
+      <!-- schoolInfo is the parent of the Graph, MyStats and Highlight components -->
 
       <schoolInfo
       :schools="schools"
@@ -46,20 +52,26 @@
 
     </div>
 
+    <!-- Footer -->
+
     <myFooter></myFooter>
 
   </div>
 </template>
 
 <script>
+
+// axios required for AJAX request
+
 import axios from 'axios'
+
+// load components
+
 import myHeader from './components/myHeader'
 import myFooter from './components/myFooter'
 import schoolInfo from './components/schoolInfo'
 
-// import Vue from 'vue'
-//
-// var eventHub = new Vue()
+// vue instance
 
 export default {
   name: 'app',
@@ -72,7 +84,6 @@ export default {
 
   data () {
     return {
-      message: 'this the message',
       schools: [],
       activeField: 'satr',
       satr: 500,
@@ -85,7 +96,7 @@ export default {
   methods: {
   },
   mounted () {
-    this.message = 'the new message'
+    // load json file
     axios.get('/static/college-data.json')
     .then((response) => {
       this.schools = response.data
@@ -101,9 +112,6 @@ body {
   margin: 0px;
 }
 #app {
-  /*font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;*/
   font-family: 'Lato';
   color: #644D52;
 }

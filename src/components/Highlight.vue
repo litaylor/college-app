@@ -1,6 +1,8 @@
 <template>
   <div id="highlight">
+    <!-- Translucent div to fade background -->
     <div class="fade" v-if="openSwitch==='open'">
+      <!-- Create popup box -->
       <div class="lightbox">
         <h1> {{ displaySchool.name }} </h1>
         <h3 style="color: #F77A52"> Acceptance rate: {{ acceptPct }} </h3>
@@ -129,6 +131,7 @@
       }
     },
     watch: {
+      // When school is selected or change, open popup box
       mySchool: function () {
         if (this.mySchool.length > 0) {
           // var entry

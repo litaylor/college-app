@@ -43,7 +43,7 @@ export default {
     h1:last-of-type {
       border: none;
     }
-    h3 {
+    #myHeader h3 {
       padding-left: 40px;
     }
   }
