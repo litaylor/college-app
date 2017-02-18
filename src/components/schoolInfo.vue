@@ -69,7 +69,7 @@
             </p>
             <div
               v-for="school in schoolList" v-if="school.sat[testCode].min > satm">
-              <p>
+              <p v-on:click="assignOutsideHighlightSchool(school)">
                 {{ school.name }}
               </p>
             </div>
@@ -80,7 +80,7 @@
             </p>
             <div
               v-for="school in schoolList" v-if="(school.sat[testCode].min <= satm) && (school.sat[testCode].max >= satm)">
-              <p>
+              <p v-on:click="assignOutsideHighlightSchool(school)">
                 {{ school.name }}
               </p>
             </div>
@@ -91,7 +91,7 @@
             </p>
             <div
               v-for="school in schoolList" v-if="(school.sat[testCode].max < satm)">
-              <p>
+              <p v-on:click="assignOutsideHighlightSchool(school)">
                 {{ school.name }}
               </p>
             </div>
@@ -106,7 +106,7 @@
             </p>
             <div
               v-for="school in schoolList" v-if="school.sat[testCode].min > satw">
-              <p>
+              <p v-on:click="assignOutsideHighlightSchool(school)">
                 {{ school.name }}
               </p>
             </div>
@@ -117,7 +117,7 @@
             </p>
             <div
               v-for="school in schoolList" v-if="(school.sat[testCode].min <= satw) && (school.sat[testCode].max >= satw)">
-              <p>
+              <p v-on:click="assignOutsideHighlightSchool(school)">
                 {{ school.name }}
               </p>
             </div>
@@ -128,7 +128,7 @@
             </p>
             <div
               v-for="school in schoolList" v-if="(school.sat[testCode].max < satw)">
-              <p>
+              <p v-on:click="assignOutsideHighlightSchool(school)">
                 {{ school.name }}
               </p>
             </div>
@@ -143,7 +143,7 @@
             </p>
             <div
               v-for="school in schoolList" v-if="school.act.min > act">
-              <p>
+              <p v-on:click="assignOutsideHighlightSchool(school)">
                 {{ school.name }}
               </p>
             </div>
@@ -154,7 +154,7 @@
             </p>
             <div
               v-for="school in schoolList" v-if="(school.act.min <= act) && (school.act.max >= act)">
-              <p>
+              <p v-on:click="assignOutsideHighlightSchool(school)">
                 {{ school.name }}
               </p>
             </div>
@@ -165,7 +165,7 @@
             </p>
             <div
               v-for="school in schoolList" v-if="(school.act.max < act)">
-              <p>
+              <p v-on:click="assignOutsideHighlightSchool(school)">
                 {{ school.name }}
               </p>
             </div>
