@@ -1,6 +1,6 @@
 # college-app
 
-> A web app showing University of North carolina admissions data to prospective students.
+> A web app showing University of North Carolina admissions data to prospective students.
 
 ## Getting started
 
