@@ -357,7 +357,7 @@
     stroke-width: 0.5;
     opacity: 0.8;
   }
-  @media (max-width:768px) {
+  @media (max-width:767.9px) {
     .graphCanvas {
       width:100%;
     }

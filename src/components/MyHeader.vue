@@ -21,15 +21,17 @@ export default {
     margin-bottom: 40px;
   }
   @media (max-width: 768px) {
-    #myHeader, #myFooter {
-      padding: 20px 10px;
-    }
     .body {
       padding-left: 10px;
       padding-right: 10px;
     }
   }
-  @media (min-width: 769px) {
+  @media (max-width: 835px) {
+    #myHeader, #myFooter {
+      padding: 20px 10px;
+    }
+  }
+  @media (min-width: 835px) {
     #myHeader, #myFooter {
       padding:20px 20px 20px 0px;
       text-align: center;

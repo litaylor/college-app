@@ -6,9 +6,10 @@ body {
 p.header {
   font-size: 150%;
 }
-
-.menu {
-  font-size: 150%;
+@media (min-width:768px) {
+  .menu {
+    font-size: 150%;
+  }
 }
 
 .menu select, .menu input {
