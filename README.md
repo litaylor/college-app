@@ -4,6 +4,12 @@
 
 ## Getting started
 
+> Clone to a local repository
+
+``` bash
+git clone https://github.com/litaylor/college-app.git
+```
+
 ``` bash
 # Install dependencies
 npm install
