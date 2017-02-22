@@ -7,8 +7,6 @@
 ``` bash
 # Install dependencies
 npm install
-npm install axios
-npm install d3
 
 # Create and open in local server
 npm run dev

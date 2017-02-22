@@ -321,9 +321,26 @@
   rect.target {
     fill: #F77A52;
   }
+  rect:hover{
+    stroke-opacity:0.4;
+    stroke-width:3;
+    stroke-linejoin: round;
+  }
+  rect.target:hover{
+    stroke:#F77A52;
+  }
+  rect.safety:hover, rect.reach:hover{
+    stroke:#644D52;
+  }
   .label {
     font-size: 4px;
     font-family: 'Lato';
+  }
+  .schoolLabel {
+    font-size: 5px;
+  }
+  .schoolLabel:hover {
+    font-weight: bold;
   }
   @media (max-width: 660px) {
     .label:not(.scoreLabel) {

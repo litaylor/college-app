@@ -6,8 +6,8 @@
     <myHeader></myHeader>
 
     <div class="body">
-      My
       <div class="menu">
+        My
         <!-- DROPDOWN TO CHOOSE TEST -->
         <select v-model="activeField" class="score" name="score1">
           <option value="satr">SAT Reading</option>

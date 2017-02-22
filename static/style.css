@@ -1,4 +1,16 @@
 body {
-  /*background-color: #ffff00;*/
   font-family: Arial;
+  font-size: 16px;
+}
+
+p.header {
+  font-size: 150%;
+}
+
+.menu {
+  font-size: 150%;
+}
+
+.menu select, .menu input {
+  font-size: inherit;
 }
